@@ -25,6 +25,7 @@ with open('chatbot_corpus.json', 'r') as myfile:
 
 def handle_request():
     logger.debug(request.form)
+    print(request.form)
 
     act = None
     if exists( f"users/{request.form['From']}.pkl") :
