@@ -21,7 +21,7 @@ with open('chatbot_corpus.json', 'r') as myfile:
     CORPUS = json.loads(myfile.read())
 
 def handle_request():
-    logger.debug(request.form, '\n')
+    logger.debug(request.form)
 
     act = None
 
@@ -50,7 +50,7 @@ def handle_request():
     act.save_msg({'from': 'CHATBOT', 'msg': response, 'timestamp': datetime.datetime.now()})
 
     # Log current response
-    logger.debug(response, '\n')
+    logger.debug(response)
 
     # Log message thread from current actor
     logger.info('Actor message thread:\n%s', pformat(act.prev_msgs))
