@@ -7,7 +7,8 @@ from things.actors import actor
 import random
 import json
 import pickle
-import datetime;
+import datetime
+from pprint import pformat
 
 yml_configs = {}
 
@@ -20,7 +21,7 @@ with open('chatbot_corpus.json', 'r') as myfile:
     CORPUS = json.loads(myfile.read())
 
 def handle_request():
-    logger.debug(request.form)
+    logger.debug(request.form, '\n')
 
     act = None
 
@@ -33,9 +34,6 @@ def handle_request():
 
     # Save actor's message that was sent
     act.save_msg({'from': 'ACTOR', 'msg': request.form['Body'], 'timestamp': datetime.datetime.now()})
-
-    # Log message thread from current actor
-    logger.debug(act.prev_msgs)
 
     response = 'NOT FOUND'
 
@@ -52,7 +50,10 @@ def handle_request():
     act.save_msg({'from': 'CHATBOT', 'msg': response, 'timestamp': datetime.datetime.now()})
 
     # Log current response
-    logger.debug(response)
+    logger.debug(response, '\n')
+
+    # Log message thread from current actor
+    logger.info('Actor message thread:\n%s', pformat(act.prev_msgs))
 
     # Pickle the actor
     with open(f"users/{request.form['From']}.pkl", 'wb') as p:
