@@ -3,8 +3,6 @@ from nltk.sentiment import SentimentIntensityAnalyzer
 
 from enum import Enum
 
-from things.pos_tags import *
-
 class SentimentType(Enum):
     NEUTRAL = 0
     POSITIVE = 1
