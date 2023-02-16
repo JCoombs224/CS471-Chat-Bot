@@ -17,12 +17,11 @@ def get_message_sentiment(message: str) -> SentimentType:
     return greatest_sentiment(polarity_scores)
 
 def greatest_sentiment(polarity_scores: dict) -> SentimentType:
-    if polarity_scores['pos'] > polarity_scores['neg']:
+    if polarity_scores['pos'] > polarity_scores['neg'] and polarity_scores['pos'] > polarity_scores['neu']:
         return SentimentType.POSITIVE
-    elif polarity_scores['pos'] < polarity_scores['neg']:
+    elif polarity_scores['neg'] > polarity_scores['pos'] and polarity_scores['neg'] > polarity_scores['neu']:
         return SentimentType.NEGATIVE
-    else:
-        return SentimentType.NEUTRAL
+    return SentimentType.NEUTRAL
 
 def get_polarity_scores(message: str):
     sia = SentimentIntensityAnalyzer()
