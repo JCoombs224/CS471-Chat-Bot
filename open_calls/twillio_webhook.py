@@ -2,6 +2,7 @@ import yaml
 from flask import request, g
 from flask_json import FlaskJSON, JsonError, json_response, as_json
 from os.path import exists
+from os import getcwd
 from tools.logging import logger
 from things.actors import actor
 import random
@@ -14,6 +15,8 @@ from pprint import pformat
 from tools.nlp import *
 
 yml_configs = {}
+
+path = getcwd()
 
 with open('config.yml', 'r') as yml_file:
     yml_configs = yaml.safe_load(yml_file)
