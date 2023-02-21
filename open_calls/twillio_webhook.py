@@ -9,7 +9,7 @@ import random
 import json
 import pickle
 import datetime
-from response_gen import generate
+from response_gen import get_response
 from pprint import pformat
 
 from tools.nlp import *
@@ -38,7 +38,7 @@ def handle_request():
     # Parse sent input from actor
     sent_input = str(request.form['Body']).lower()
 
-    response = generate(act, sent_input)
+    response = get_response(act, sent_input)
 
     # Save the chatbot's response to the actor
     act.save_msg({'from': 'CHATBOT', 'msg': response, 'timestamp': datetime.datetime.now()})
@@ -47,7 +47,7 @@ def handle_request():
     logger.debug(response)
 
     # Log message thread from current actor
-    logger.info('Actor message thread:\n%s', pformat(act.prev_msgs))
+    #logger.info('Actor message thread:\n%s', pformat(act.prev_msgs)) # Uncomment if you need message thread
 
     # Pickle the actor
     with open(f"users/{request.form['From']}.pkl", 'wb') as p:

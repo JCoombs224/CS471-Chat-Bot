@@ -1,64 +1,10 @@
 {
     "input": {
-        "hi": "HELLO",
-        "hello": "HELLO",
-        "hey": "HELLO",
-        "helloo": "HELLO",
-        "hellooo": "HELLO",
-        "g morining": "HELLO",
-        "gmorning": "HELLO",
-        "good morning": "HELLO",
-        "morning": "HELLO",
-        "good day": "HELLO",
-        "good afternoon": "HELLO",
-        "good evening": "HELLO",
-        "greetings": "HELLO",
-        "greeting": "HELLO",
-        "good to see you": "HELLO",
-        "its good seeing you": "HELLO",
-        "HELLO": [
+        "hello": [
             "How are you, son?",
             "Are you married yet?",
             "Hey there,  old chap!",
             "WHO IS THIS?"
-        ],
-        "how are you": "HOWRU",
-        "how're you": "HOWRU",
-        "how are you doing": "HOWRU",
-        "how ya doin'": "HOWRU",
-        "how ya doin": "HOWRU",
-        "how is everything": "HOWRU",
-        "how is everything going": "HOWRU",
-        "how's everything going": "HOWRU",
-        "how is you": "HOWRU",
-        "how's you": "HOWRU",
-        "how are things": "HOWRU",
-        "how're things": "HOWRU",
-        "how is it going": "HOWRU",
-        "how's it going": "HOWRU",
-        "how's it goin'": "HOWRU",
-        "how's it goin": "HOWRU",
-        "how is life been treating you": "HOWRU",
-        "how's life been treating you": "HOWRU",
-        "how have you been": "HOWRU",
-        "how've you been": "HOWRU",
-        "HOWRU": [
-            "I am swell sweetie how are you?"
-        ],
-        "what is up": "SUP",
-        "what's up": "SUP",
-        "what is cracking": "SUP",
-        "what's cracking": "SUP",
-        "what is good": "SUP",
-        "what's good": "SUP",
-        "what is happening": "SUP",
-        "what's happening": "SUP",
-        "what is new": "SUP",
-        "what's new": "SUP",
-        "what is neww": "SUP",
-        "howdy": "SUP",
-        "SUP": [
-            "Watching jeopardy. How about you?"
         ],
         "your favorite": [
             "DID NOT FIND"
@@ -69,6 +15,12 @@
             "Wwhho's numbbr is this",
             "fajwo;eiajcmwoiawehello"
         ]
-
+    },
+    "negative": {
+        "you": [
+            "People these days have no respect for their elders",
+            "You should not talk to people like that especially to your elder",
+            "You hurt my feelings."
+        ]
     }
 }
