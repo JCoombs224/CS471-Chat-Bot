@@ -8,7 +8,7 @@ import random
 import json
 import pickle
 import datetime
-import response_gen
+from response_gen import generate
 from pprint import pformat
 
 from tools.nlp import *
@@ -37,7 +37,7 @@ def handle_request():
     # Parse sent input from actor
     sent_input = str(request.form['Body']).lower()
 
-    response = response_gen.generate(act, sent_input)
+    response = generate(act, sent_input)
 
     # Save the chatbot's response to the actor
     act.save_msg({'from': 'CHATBOT', 'msg': response, 'timestamp': datetime.datetime.now()})
