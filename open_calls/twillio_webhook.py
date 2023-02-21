@@ -10,6 +10,8 @@ import pickle
 import datetime
 from pprint import pformat
 
+from tools.nlp import *
+
 yml_configs = {}
 
 with open('config.yml', 'r') as yml_file:
@@ -39,6 +41,19 @@ def handle_request():
 
     # Parse sent input from actor
     sent_input = str(request.form['Body']).lower()
+
+    polarity_scores = get_polarity_scores(sent_input)
+    print("Polarity scores: ", polarity_scores)
+    message_sentiment = get_message_sentiment(sent_input)
+    if message_sentiment == SentimentType.POSITIVE:
+        print("The message is positive")
+    elif message_sentiment == SentimentType.NEGATIVE:
+        print("The message is negative")
+    elif message_sentiment == SentimentType.NEUTRAL:
+        print("The message is neutral")
+    pos_tags = get_pos_tags(sent_input)
+    print(pos_tags)
+
     if sent_input in CORPUS['input']:
         response = random.choice(CORPUS['input'][sent_input])
     else:
