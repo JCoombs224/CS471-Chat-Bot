@@ -1,8 +1,7 @@
 import yaml
 from flask import request, g
 from flask_json import FlaskJSON, JsonError, json_response, as_json
-from os.path import exists
-from os import getcwd
+import os
 from tools.logging import logger
 from things.actors import actor
 import random
@@ -16,7 +15,7 @@ from tools.nlp import *
 
 yml_configs = {}
 
-path = getcwd()
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 with open('config.yml', 'r') as yml_file:
     yml_configs = yaml.safe_load(yml_file)
@@ -26,7 +25,7 @@ def handle_request():
     act = None
 
     # Check if the actor exists
-    if exists( f"users/{request.form['From']}.pkl") :
+    if os.path.exists( f"users/{request.form['From']}.pkl") :
         with open(f"users/{request.form['From']}.pkl", 'rb') as p:
             act = pickle.load(p) 
     else:
