@@ -8,6 +8,7 @@ import random
 import json
 import pickle
 import datetime
+import response_gen
 from pprint import pformat
 
 from tools.nlp import *
@@ -17,14 +18,8 @@ yml_configs = {}
 with open('config.yml', 'r') as yml_file:
     yml_configs = yaml.safe_load(yml_file)
 
-CORPUS = {}
-
-with open('chatbot_corpus.json', 'r') as myfile:
-    CORPUS = json.loads(myfile.read())
-
 def handle_request():
     logger.debug(request.form)
-
     act = None
 
     # Check if the actor exists
@@ -42,24 +37,7 @@ def handle_request():
     # Parse sent input from actor
     sent_input = str(request.form['Body']).lower()
 
-    polarity_scores = get_polarity_scores(sent_input)
-    print("Polarity scores: ", polarity_scores)
-    message_sentiment = get_message_sentiment(sent_input)
-    if message_sentiment == SentimentType.POSITIVE:
-        print("The message is positive")
-    elif message_sentiment == SentimentType.NEGATIVE:
-        print("The message is negative")
-    elif message_sentiment == SentimentType.NEUTRAL:
-        print("The message is neutral")
-    pos_tags = get_pos_tags(sent_input)
-    print(pos_tags)
-
-    if sent_input in CORPUS['input']:
-        response = random.choice(CORPUS['input'][sent_input])
-    else:
-        CORPUS['input'][sent_input] = ['DID NOT FIND']
-        with open('chatbot_corpus.json', 'w') as myfile:
-            myfile.write(json.dumps(CORPUS, indent=4 ))
+    response = response_gen.generate(act, sent_input)
 
     # Save the chatbot's response to the actor
     act.save_msg({'from': 'CHATBOT', 'msg': response, 'timestamp': datetime.datetime.now()})
