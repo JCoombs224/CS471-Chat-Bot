@@ -19,6 +19,8 @@ with open('chatbot_corpus.json', 'r') as myfile:
 
 def generate(act, message):
     
+    response = 'NOT FOUND'
+
     polarity_scores = get_polarity_scores(message)
     print("Polarity scores: ", polarity_scores)
     message_sentiment = get_message_sentiment(message)
@@ -37,4 +39,6 @@ def generate(act, message):
         CORPUS['input'][message] = ['DID NOT FIND']
         with open('chatbot_corpus.json', 'w') as myfile:
             myfile.write(json.dumps(CORPUS, indent=4 ))
+    
+    return response
 
