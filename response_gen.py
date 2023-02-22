@@ -67,11 +67,13 @@ def negative_response(message):
 def neutral_response(message):
     response = 'neutral'
 
+    #TODO: Respond to a neutral message here
 
     return response
 
 def positive_response(message):
     response = 'positive'
 
-    
+    #TODO: Respond to a positive message here
+
     return response
