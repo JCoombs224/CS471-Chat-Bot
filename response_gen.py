@@ -42,15 +42,18 @@ def generate(message):
     pos_tags = get_pos_tags(message)
     print(pos_tags)
 
+    # Determine next path based on message sentiment
     if message_sentiment == SentimentType.POSITIVE:
         print("The message is positive")
+        response = positive_response(message)
     elif message_sentiment == SentimentType.NEGATIVE:
         print("The message is negative")
         response = negative_response(message)
-    elif message_sentiment == SentimentType.NEUTRAL:
+    else:
         print("The message is neutral")
+        response = neutral_response(message)
 
-
+    # Send response to webhook
     return response
 
 def negative_response(message):
@@ -59,4 +62,16 @@ def negative_response(message):
     if "you" in message:
         response = random.choice(CORPUS['negative']['you'])
 
+    return response
+
+def neutral_response(message):
+    response = 'neutral'
+
+
+    return response
+
+def positive_response(message):
+    response = 'positive'
+
+    
     return response
