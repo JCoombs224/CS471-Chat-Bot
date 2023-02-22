@@ -38,6 +38,7 @@ def handle_request():
     # Parse sent input from actor
     sent_input = str(request.form['Body']).lower()
 
+    # Generate a response back to the user from response_gen.py
     response = get_response(act, sent_input)
 
     # Save the chatbot's response to the actor
