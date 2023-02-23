@@ -22,7 +22,29 @@
         },
         "struggle5" : {
                         "content" : "Are you a telemarketer? I don't have time for your shit. I have to go to Best Buy in an hour to buy some gift cards for a Nigerian Prince.",
+                        "next_state" : [
+                                        {
+                                                "input" : "yes",
+                                                "next_state" : "y"
+                                        },
+                                        {
+                                                "input" : "no",
+                                                "next_state" : "n"
+                                        }
+                                        ]
+
+        },
+        "y" : {
+                "content" : "Man up and get a real, honest job.",
+                "next_state" : "begin"
+                },
+        "n" : {
+                "content" : "That's a relief. I hope you have a real, honest job.",
+                "next_state" : "begin"
+        },
+
+        "confused" : {
+                        "content" : "I dont know what the hell you're talking about, son",
                         "next_state" : "begin"
         }
-
 }
