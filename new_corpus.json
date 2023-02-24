@@ -1,7 +1,7 @@
 {
           "begin"  : {
                         "content": ["hellowhoisthis"],
-                        "next_state": "confused"
+                        "next_state": "struggle1"
                         },
 
         "struggle1" : {
@@ -24,31 +24,89 @@
                         "content" : ["Are you a telemarketer? I don't have time for your shit. I have to go to Best Buy in an hour to buy some gift cards for a Nigerian Prince."],
                         "next_state" : [
                                         {
-                                                "input" : "yes",
-                                                "next_state" : "y"
+                                                "input" : "negative",
+                                                "next_state" : "negative"
                                         },
                                         {
-                                                "input" : "no",
-                                                "next_state" : "n"
+                                                "input" : "positive",
+                                                "next_state" : "positive"
                                         }
                                         ]
 
-        },
-        "y" : {
-                "content" : ["Man up and get a real, honest job."],
-                "next_state" : "begin"
-                },
-        "n" : {
-                "content" : ["That's a relief. I hope you have a real, honest job."],
-                "next_state" : "begin"
         },
 
         "confused" : {
                         "content" : [
                                 "I dont know what the hell you're talking about, son",
                                 "I dont understand anything you kids say anymore",
-                                "You young folk have ruined english and you make no goddamn sense"
+                                "You young folk have ruined english and you make no goddamn sense",
+                                "I'm tired of you youngins and your nonsense",
+                                "Stay in school kid, you're forgetting how to speak proper English"
                         ],
-                        "next_state" : "begin"
+                        "next_state" : "connector"
+        },
+        "connector" : {
+                        "content" : [
+                                "anyways...",
+                                "Can I ask you something?",
+                                "Answer me this.",
+                                "By the way...",
+                                "I gotta ask...",
+                                "Hey...",
+                                "Humor me real quick"
+                        ],
+                        "next_state" : "question"
+        },
+
+        "negative" : {
+                        "content" : [
+                                "I didn't fight in the war to take shit from you",
+                                "You're the reason America is going to shit",
+                                "People these days have no respect for their elders",
+                                "You need to watch your tone, mister",
+                                "I'm going to call your mother so she can put soap in your mouth.",
+                                "I can tell you were not properly disciplined as a child",
+                                "You are a disappointment to our country",
+                                "You're a good-for-nothing hippie, I'm sure of it",
+                                "Eat my shorts",
+                                "Kids these days...",
+                                "Does anybody have respect these days?",
+                                "I'm going to slide into your grandmother's dms if you don't straighten up"
+                        ],
+                        "next_state" : "question"
+        },
+        "positive" : {
+                        "content" : [
+                                "Bless you kid, you deserve a hard candy",
+                                "You give me hope for the next generation",
+                                "If only every young American was just like you, then I wouldn't worry so much",
+                                "You've got a bright future ahead of you, kid",
+                                "You're a good kid. I ought to take you out to a ball game sometime",
+                                "You're good-natured. That's hard to come by nowadays",
+                                "The staff at the nursing home would love you if you ever visited",
+                                "You know how to show respect. Good on ya, kid. You should've joined the army.",
+                                "You'd make a fine soilder in the army with that attitude"
+                        ],
+                        "next_state" : "question"
+        },
+
+        "question" : {
+                        "content" : [
+                                        "I left a message on your answering machine. Why didn't you call me back yet?",
+                                        "I'm still hip, right?",
+                                        "Can you remind me to schedule my annual colonoscopy?",
+                                        "Do you want to be in my will?"
+                        ],
+                        "next_state" : [
+                                {
+                                        "input" : "negative",
+                                        "next_state" : "negative"
+                                },
+                                {
+                                        "input" : "positive",
+                                        "next_state" : "positive"
+                                }
+                        ]
+
         }
 }
