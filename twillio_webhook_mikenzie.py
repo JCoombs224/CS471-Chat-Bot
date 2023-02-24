@@ -52,7 +52,7 @@ def handle_request():
     else:
         act= actor(request.form['From'])
 
-    response = (CORPUS[act.state]['content'])
+    response = random.choice(CORPUS[act.state]['content'])
     act.save_msg({'from': 'CHATBOT', 'msg': response, 'timestamp': datetime.datetime.now()})
     act.save_msg({'from': 'ACTOR', 'msg': request.form['Body'], 'timestamp': datetime.datetime.now()})
     with open(f"users/{request.form['From']}.pkl", 'wb') as p:
