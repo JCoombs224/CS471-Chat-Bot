@@ -1,27 +1,27 @@
 {
           "begin"  : {
-                        "content": "hellowhoisthis",
-                        "next_state": "struggle1"
+                        "content": ["hellowhoisthis"],
+                        "next_state": "confused"
                         },
 
         "struggle1" : {
-                        "content" : "whereisspacebar.justgotthisdamnphoneihatemygrandchildrenforbuying",
+                        "content" : ["whereisspacebar.justgotthisdamnphoneihatemygrandchildrenforbuying"],
                         "next_state": "struggle2"
                         },
         "struggle2" : {
-                        "content" : "oki mlearning how to do this. Don't know hpwyo fix errorsyet.",
+                        "content" : ["oki mlearning how to do this. Don't know hpwyo fix errorsyet."],
                         "next_state": "struggle3"
                         },
         "struggle3" : {
-                        "content" : "Ok I am talking now to the microphone to type hello type no delete it and delete it stop writing delete how do you delete on no delete delete delete yourself theres really no way to delete it damn it i hate this thing",
+                        "content" : ["Ok I am talking now to the microphone to type hello type no delete it and delete it stop writing delete how do you delete on no delete delete delete yourself theres really no way to delete it damn it i hate this thing"],
                         "next_state" : "struggle4"
                         },
         "struggle4" : {
-                        "content" : "Ok I'm good now.",
+                        "content" : ["Ok I'm good now."],
                         "next_state" : "struggle5"
         },
         "struggle5" : {
-                        "content" : "Are you a telemarketer? I don't have time for your shit. I have to go to Best Buy in an hour to buy some gift cards for a Nigerian Prince.",
+                        "content" : ["Are you a telemarketer? I don't have time for your shit. I have to go to Best Buy in an hour to buy some gift cards for a Nigerian Prince."],
                         "next_state" : [
                                         {
                                                 "input" : "yes",
@@ -35,16 +35,20 @@
 
         },
         "y" : {
-                "content" : "Man up and get a real, honest job.",
+                "content" : ["Man up and get a real, honest job."],
                 "next_state" : "begin"
                 },
         "n" : {
-                "content" : "That's a relief. I hope you have a real, honest job.",
+                "content" : ["That's a relief. I hope you have a real, honest job."],
                 "next_state" : "begin"
         },
 
         "confused" : {
-                        "content" : "I dont know what the hell you're talking about, son",
+                        "content" : [
+                                "I dont know what the hell you're talking about, son",
+                                "I dont understand anything you kids say anymore",
+                                "You young folk have ruined english and you make no goddamn sense"
+                        ],
                         "next_state" : "begin"
         }
 }
