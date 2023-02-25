@@ -56,6 +56,9 @@ def handle_request():
                     if (request.form['Body']).lower() == (next_state['input']).lower():
                         found = True
                         act.state = next_state['next_state']
+                    if (sentiment_result == (next_state['input']).lower()):
+                            found = True
+                            act.state = next_state['next_state']
                     if not found:
                         act.state = sentiment_result
             else: #the program doesn't care what the user says and moves to the next sequential state
@@ -82,7 +85,7 @@ def handle_request():
 
 
     logger.debug(response)
-
+    logger.debug(act.state)
     message = g.sms_client.messages.create(
                      body=response,
                      from_=yml_configs['twillio']['phone_number'],
