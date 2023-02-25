@@ -1,50 +1,146 @@
 {
           "begin"  : {
-                        "content": "hellowhoisthis",
+                        "content": ["hellowhoisthis"],
                         "next_state": "struggle1"
                         },
 
         "struggle1" : {
-                        "content" : "whereisspacebar.justgotthisdamnphoneihatemygrandchildrenforbuying",
+                        "content" : ["whereisspacebar.justgotthisdamnphoneihatemygrandchildrenforbuying"],
                         "next_state": "struggle2"
                         },
         "struggle2" : {
-                        "content" : "oki mlearning how to do this. Don't know hpwyo fix errorsyet.",
+                        "content" : ["oki mlearning how to do this. Don't know hpwyo fix errorsyet."],
                         "next_state": "struggle3"
                         },
         "struggle3" : {
-                        "content" : "Ok I am talking now to the microphone to type hello type no delete it and delete it stop writing delete how do you delete on no delete delete delete yourself theres really no way to delete it damn it i hate this thing",
+                        "content" : ["Ok I am talking now to the microphone to type hello type no delete it and delete it stop writing delete how do you delete on no delete delete delete yourself theres really no way to delete it damn it i hate this thing"],
                         "next_state" : "struggle4"
                         },
         "struggle4" : {
-                        "content" : "Ok I'm good now.",
+                        "content" : ["Ok I'm good now."],
                         "next_state" : "struggle5"
         },
         "struggle5" : {
-                        "content" : "Are you a telemarketer? I don't have time for your shit. I have to go to Best Buy in an hour to buy some gift cards for a Nigerian Prince.",
+                        "content" : ["Are you a telemarketer? I don't have time for your shit. I have to go to Best Buy in an hour to buy some gift cards for a Nigerian Prince."],
+                        "next_state" : "army1"
+        },
+        "army1" : {
+                        "content" : ["Well I guess either way I'm bored and retired and now I'm gonna make that your problem. Do you want to hear about my time in the army?"],
                         "next_state" : [
                                         {
-                                                "input" : "yes",
-                                                "next_state" : "y"
+                                                "input" : "negative",
+                                                "next_state" : "negative_army"
                                         },
                                         {
-                                                "input" : "no",
-                                                "next_state" : "n"
+                                                "input" : "positive",
+                                                "next_state" : "positive_army"
+                                        },
+                                        {
+                                                "input" : "neutral",
+                                                "next_state" : "positive_army"
                                         }
-                                        ]
-
-        },
-        "y" : {
-                "content" : "Man up and get a real, honest job.",
-                "next_state" : "begin"
-                },
-        "n" : {
-                "content" : "That's a relief. I hope you have a real, honest job.",
-                "next_state" : "begin"
+                        ]
         },
 
+        "negative_army" : {
+                        "content" : ["Commie bastard. You're gonna listen anyways."],
+                        "next_state" : "army2"
+
+        },
+        "positive_army" : {
+                        "content" : ["Glad to know you're a patriot. Now listen up."],
+                        "next_state" : "army2"
+
+        },
+        "army2" : {
+                        "content" : ["TODO: "],
+                        "next_state" : "confused"
+
+        },
         "confused" : {
-                        "content" : "I dont know what the hell you're talking about, son",
-                        "next_state" : "begin"
+                        "content" : [
+                                "I dont know what the hell you're talking about, son",
+                                "I dont understand anything you kids say anymore",
+                                "You young folk have ruined english and you make no goddamn sense",
+                                "I'm tired of you youngins and your nonsense",
+                                "Stay in school kid, you're forgetting how to speak proper English"
+                        ],
+                        "next_state" : "connector"
+        },
+        "connector" : {
+                        "content" : [
+                                "anyways...",
+                                "Can I ask you something?",
+                                "Answer me this.",
+                                "By the way...",
+                                "I gotta ask...",
+                                "Hey...",
+                                "Humor me real quick"
+                        ],
+                        "next_state" : "question"
+        },
+
+        "negative" : {
+                        "content" : [
+                                "I didn't fight in the war to take shit from you",
+                                "You're the reason America is going to shit",
+                                "People these days have no respect for their elders",
+                                "You need to watch your tone, mister",
+                                "I'm going to call your mother so she can put soap in your mouth.",
+                                "I can tell you were not properly disciplined as a child",
+                                "You are a disappointment to our country",
+                                "You're a good-for-nothing hippie, I'm sure of it",
+                                "Eat my shorts",
+                                "Kids these days...",
+                                "Does anybody have respect these days?",
+                                "I'm going to slide into your grandmother's dms if you don't straighten up",
+                                "That's it. I'm taking you out of the will.",
+                                "You're more annoying than my dead wife.",
+                                "Texting you is more painful than my hemorrhoids",
+                                "You suck. And your generation is a bunch of hippie freeloaders. And I hate you."
+                        ],
+                        "next_state" : "question"
+        },
+        "positive" : {
+                        "content" : [
+                                "Bless you kid, you deserve a hard candy",
+                                "You give me hope for the next generation",
+                                "If only every young American was just like you, then I wouldn't worry so much",
+                                "You've got a bright future ahead of you, kid",
+                                "You're a good kid. I ought to take you out to a ball game sometime",
+                                "You're good-natured. That's hard to come by nowadays",
+                                "The staff at the nursing home would love you if you ever visited",
+                                "You know how to show respect. Good on ya, kid. You should've joined the army.",
+                                "You'd make a fine soilder in the army with that attitude",
+                                "You're a mighty fine kid. I'll put you in my will."
+                        ],
+                        "next_state" : "question"
+        },
+
+        "question" : {
+                        "content" : [
+                                        "I left a message on your answering machine. Why didn't you call me back yet?",
+                                        "I'm still hip, right?",
+                                        "Can you remind me to schedule my annual colonoscopy?",
+                                        "Do you want to be in my will?",
+                                        "Do you like my new shoes? SEND PHOTO",
+                                        "What do you think of this new necklace my granddaughter bought me? SEND PHOTO",
+                                        "Now that my wife's dead, do you think I should download Tinder?",
+                                        "Would you ever want to meet up for Home Town Buffet? I could teach you how to woo the ladies",
+                                        "Would you want to play bingo at the community center with me? I'll sneak in some scotch for the both of us",
+                                        "I keep hearing about this new 'Doja Cat' character. She seems like a real up-and-comer. Should I buy her tape?"
+
+                        ],
+                        "next_state" : [
+                                {
+                                        "input" : "negative",
+                                        "next_state" : "negative"
+                                },
+                                {
+                                        "input" : "positive",
+                                        "next_state" : "positive"
+                                }
+                        ]
+
         }
 }
