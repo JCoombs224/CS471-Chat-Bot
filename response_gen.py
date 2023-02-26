@@ -11,6 +11,9 @@ import datetime
 from pprint import pformat
 
 from tools.nlp import *
+import nltk
+from nltk.chat.util import Chat, reflections
+from chat_dictionary import pairs
 
 CORPUS = {}
 
@@ -41,6 +44,9 @@ def generate(message):
     message_sentiment = get_message_sentiment(message)
     pos_tags = get_pos_tags(message)
     print(pos_tags)
+
+    chat = Chat(pairs, reflections)
+    chat.respond(message)
 
     # Determine next path based on message sentiment
     if message_sentiment == SentimentType.POSITIVE:
