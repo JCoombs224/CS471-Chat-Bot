@@ -58,12 +58,8 @@ pairs = [
         ["Its alright","Its OK, never mind",]
     ],
     [
-        r"i'm (doing)? (.*)",
+        i_am+r" (doing)? (.*)",
         ["SENTIMENT to hear that, How can I help you?",]
-    ],
-    [
-        i_am.join(r" (.*) doing good"),
-        ["Nice to hear that", "How can I help you?",]
     ],
     [
         r"how old are you?",
