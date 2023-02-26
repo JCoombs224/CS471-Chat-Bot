@@ -26,7 +26,7 @@ def get_response(act, message):
     input_message = message
     response = 'NOT FOUND'
 
-    if message in CORPUS['input']:
+    if message in CORPUS['input']:  
         response = random.choice(CORPUS['input'][input_message])
     else:
         response = generate(act, message)
@@ -49,9 +49,8 @@ def generate(act, message):
     response = chat.respond(message)
 
     if response:
-        state = response.partition('#')[2]
-        response = response.partition('#')[0]
-        print(state)
+        #state = response.partition('#')[2]
+        #response = response.partition('#')[0]
         return response
 
     # Determine next path based on message sentiment

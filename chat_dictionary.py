@@ -51,23 +51,19 @@ pairs = [
     ],
     [
         r"i'm (.*) doing good",
-        ["Nice to hear that", "How can I help you?:)",]
+        ["Nice to hear that", "How can I help you?",]
     ],
     [
         r"how old are you?",
-        ["Oh my, I'm quite old! I've lost count of my years. How old are you dear? #WAITING",]
+        ["Oh my, I'm quite old! I've lost count of my years. How old are you dear?",]
     ],
     [
-        r"i am (.*) years old",
-        ["I remember being %1, those were the days",]
+        r"(i am|im|i'm) ([0-9]*) (.*)",
+        ["I remember being %1, those were the days.",]
     ],
     [
         r"what (.*) want ?",
         ["Make me an offer I can't refuse",]
-    ],
-    [
-        r"(.*) created ?",
-        ["Raghav created me using Python's NLTK library ","top secret ;)",]
     ],
     [
         r"(.*) (location|city) ?",
@@ -78,16 +74,12 @@ pairs = [
         ["Weather in %1 is awesome like always","Too hot man here in %1","Too cold man here in %1","Never even heard about %1"]
     ],
     [
-        r"i work in (.*)?",
+        r"i work (in|at) (.*)?",
         ["%1 is an Amazing company, I have heard about it. But they are in huge loss these days.",]
     ],
     [
         r"(.*)raining in (.*)",
         ["No rain since last week here in %2","Damn its raining too much here in %2"]
-    ],
-    [
-        r"how (.*) health(.*)",
-        ["I'm a computer program, so I'm always healthy ",]
     ],
     [
         r"(.*) (sports|game) ?",
