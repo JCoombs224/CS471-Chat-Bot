@@ -46,7 +46,7 @@ pairs = [
         ]
     ),
     (
-        r"sorry (.*)?",
+        r"sorry ?",
         ["Its alright","Its okay",]
     ),
     (
