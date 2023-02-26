@@ -9,6 +9,7 @@ YOU_ARE = r"(you are|youre|you're)"
 YOU_HAVE = r"(you have|youve|you've)"
 YOU_WOULD = r"(you would|youd|you'd)"
 YOU_WILL = r"(you will|youll|you'll)"
+WHAT_IS = r"(what is|whats|what's)"
 
 
 
@@ -30,7 +31,7 @@ pairs = [
         ]
     ), 
     (
-        r"what is your name ?",
+        WHAT_IS+r" your name ?",
         [
             "Susie. What is you name?",
             "My name is Susie.",
@@ -45,8 +46,8 @@ pairs = [
         ]
     ),
     (
-        r"sorry (.*)",
-        ["Its alright","Its OK, never mind",]
+        r"sorry (.*)?",
+        ["Its alright","Its okay",]
     ),
     (
         I_AM+r" ([0-9]+) ?",
