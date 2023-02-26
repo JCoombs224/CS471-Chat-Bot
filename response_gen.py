@@ -49,7 +49,7 @@ def generate(act, message):
     response = chat.respond(message)
 
     if response:
-        state = response.partition('#')[1]
+        state = response.partition('#')[2]
         response = response.partition('#')[0]
         print(state)
         return response
