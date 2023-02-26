@@ -52,7 +52,6 @@ def generate(act, message):
 
     # Check for profanities. The chat bot will disregard any profane language entirely,
     # just like your grandmother.
-    print(PROFANITIES)
     for word in PROFANITIES:
         if word in message:
             return random.choice(CORPUS['negative']['profanity'])
