@@ -1,25 +1,16 @@
-# # For reference might use a data structure like this later so that multiple inputs can represent
-# # one input into the corpus
-# pairs = [
-#     # Greetings
-#     (r"hi|hello|hey", ["greeting","hello"]),
-#     (r"how are you|how you doing|how's it going", ["greeting","how doing"]),
-#     (r"fine|good", ["That's great to hear."]),
-#     (r"not (good|well|fine)", ["Oh, I'm sorry to hear that. Is there anything I can do to help?"]),
-    
-#     # Age-related topics
-#     (r"how old are you", ["Oh my, I'm quite old! I've lost count of my years."]),
-#     (r"what's your age", ["Well, let's just say I've been around for quite some time."]),
-#     (r"grandchild|grandchildren", ["Yes, I have many grandchildren. They bring me so much joy."]),
-#     (r"memory|remember", ["My memory isn't what it used to be, but I still cherish the memories I have."]),
-    
-#     # Farewells
-#     (r"bye|goodbye", ["Goodbye, dear. Take care!"]),
-#     (r"thank you", ["You're welcome, dear. Anytime."]),
-#     (r"thanks", ["You're welcome, dear. Take care!"])
-# ]
 
-i_am = r"(im|i'm|i am)"
+
+# English contraction constants
+I_AM = r"(im|i'm|i am)"
+I_HAVE = r"(i have|ive|i've)"
+I_WOULD = r"(i would|id|i'd)"
+I_WILL = r"(i will|ill|i'll)"
+YOU_ARE = r"(you are|youre|you're)"
+YOU_HAVE = r"(you have|youve|you've)"
+YOU_WOULD = r"(you would|youd|you'd)"
+YOU_WILL = r"(you will|youll|you'll)"
+
+
 
 pairs = [
     (
@@ -58,11 +49,11 @@ pairs = [
         ["Its alright","Its OK, never mind",]
     ),
     (
-        i_am+r" ([0-9]+) ?",
+        I_AM+r" ([0-9]+) ?",
         ["I remember being %1, those were the days.",]
     ),
     (
-        i_am+r" (.*)",
+        I_AM+r" (.*)",
         ["SENTIMENT to hear that, How can I help you?",]
     ),
     (
@@ -88,7 +79,7 @@ pairs = [
     ),
     (
         r"how is weather in (.*)?",
-        ["Weather in %1 is awesome like always","Too hot man here in %1","Too cold man here in %1","Never even heard about %1"]
+        ["Weather in %1 is awesome like always","Too hot here in %1","Too cold here in %1","Never even heard about %1"]
     ),
     (
         r"i work (in|at) (.*)?",
@@ -110,4 +101,12 @@ pairs = [
         r"bye|goodbye",
         ["Goodbye, dear. Take care!"]
     ),
+    (
+        r"i like (.*)",
+        ["Why do you like %1?", "Did you ever dislike %1?"]
+    ),
+    (
+        r"i (hate|dislike|don't like) (.*)",
+        ["Why don't you like %1?"]
+    )
 ]
