@@ -73,9 +73,9 @@ pairs = [
         ]
     ),
     (
-        r"memory|remember",
+        r"(.*) remember (.*)",
         [
-            "My memory isn't what it used to be, but I still cherish the memories I have."
+            "I do not remember much about %2. My memory isn't what it used to be, but I still cherish the memories I have."
         ]
     ),
     (
