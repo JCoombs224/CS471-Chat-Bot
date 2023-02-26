@@ -58,16 +58,16 @@ pairs = [
         ["Its alright","Its OK, never mind",]
     ],
     [
+        r"i'm ([0-9]*) ?",
+        ["I remember being %1, those were the days.",]
+    ],
+    [
         i_am+r" (.*)",
         ["SENTIMENT to hear that, How can I help you?",]
     ],
     [
         r"how old are you?",
         ["Oh my, I'm quite old! I've lost count of my years. How old are you dear?",]
-    ],
-    [
-        r"i'm ([0-9]*)?",
-        ["I remember being %1, those were the days.",]
     ],
     [
         r"what (.*) want ?",
