@@ -23,7 +23,7 @@ with open('chatbot_corpus.json', 'r') as myfile:
     CORPUS = json.loads(myfile.read())
 
 with open('profanities.txt', 'r') as myfile:
-    PROFANITIES = myfile.readlines()
+    PROFANITIES = myfile.read().splitlines()
 
 input_message = ''
 
