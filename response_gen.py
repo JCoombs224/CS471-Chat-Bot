@@ -29,7 +29,7 @@ def get_response(act, message):
     if message in CORPUS['input']:
         response = random.choice(CORPUS['input'][input_message])
     else:
-        response = generate(message)
+        response = generate(act, message)
         #with open('chatbot_corpus.json', 'w') as myfile:
         #    myfile.write(json.dumps(CORPUS, indent=4 ))
     
