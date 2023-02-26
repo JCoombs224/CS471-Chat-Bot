@@ -17,8 +17,13 @@ from chat_dictionary import pairs
 
 CORPUS = {}
 
+PROFANITIES = []
+
 with open('chatbot_corpus.json', 'r') as myfile:
     CORPUS = json.loads(myfile.read())
+
+with open('profanities', 'r') as myfile:
+    PROFANITIES = myfile.readlines()
 
 input_message = ''
 
@@ -44,6 +49,12 @@ def generate(act, message):
     message_sentiment = get_message_sentiment(message)
     pos_tags = get_pos_tags(message)
     print(pos_tags)
+
+    # Check for profanities. The chat bot will disregard any profane language entirely,
+    # just like your grandmother.
+    for word in PROFANITIES:
+        if word in message:
+            return random.choice(CORPUS['negative']['profanity'])
 
     chat = Chat(pairs, reflections)
     response = chat.respond(message)
