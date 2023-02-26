@@ -107,6 +107,6 @@ pairs = [
     ),
     (
         r"i (hate|dislike|don't like) (.*)",
-        ["Why don't you like %1?"]
+        ["Why don't you like %2?"]
     )
 ]
