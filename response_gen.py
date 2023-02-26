@@ -30,8 +30,8 @@ def get_response(act, message):
         response = random.choice(CORPUS['input'][input_message])
     else:
         response = generate(message)
-        with open('chatbot_corpus.json', 'w') as myfile:
-            myfile.write(json.dumps(CORPUS, indent=4 ))
+        #with open('chatbot_corpus.json', 'w') as myfile:
+        #    myfile.write(json.dumps(CORPUS, indent=4 ))
     
     return response
 
@@ -46,7 +46,7 @@ def generate(message):
     print(pos_tags)
 
     chat = Chat(pairs, reflections)
-    chat.respond(message)
+    return chat.respond(message)
 
     # Determine next path based on message sentiment
     if message_sentiment == SentimentType.POSITIVE:
