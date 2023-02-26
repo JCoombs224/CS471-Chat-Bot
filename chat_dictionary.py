@@ -58,7 +58,7 @@ pairs = [
         ["Its alright","Its OK, never mind",]
     ],
     [
-        r"i'm ([0-9]*) ?",
+        r"i'm ([0-9]+) ?",
         ["I remember being %1, those were the days.",]
     ],
     [
