@@ -58,7 +58,7 @@ pairs = [
         ["Oh my, I'm quite old! I've lost count of my years. How old are you dear?",]
     ],
     [
-        r"i'm ([0-9]*) ?",
+        r"i'm ([0-9]*)?",
         ["I remember being %1, those were the days.",]
     ],
     [
