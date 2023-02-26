@@ -58,7 +58,7 @@ pairs = [
         ["Its alright","Its OK, never mind",]
     ],
     [
-        r"i'm ([0-9]+) ?",
+        i_am+r" ([0-9]+) ?",
         ["I remember being %1, those were the days.",]
     ],
     [
@@ -66,16 +66,25 @@ pairs = [
         ["SENTIMENT to hear that, How can I help you?",]
     ],
     [
-        r"how old are you?",
-        ["Oh my, I'm quite old! I've lost count of my years. How old are you dear?",]
+        r"how old are you?|what's your age",
+        [
+            "Oh my, I'm quite old! I've lost count of my years. How old are you dear?",
+            "Well, let's just say I've been around for quite some time. How old are you dear?",
+        ]
+    ],
+    [
+        r"memory|remember",
+        [
+            "My memory isn't what it used to be, but I still cherish the memories I have."
+        ]
     ],
     [
         r"what (.*) want ?",
         ["Make me an offer I can't refuse",]
     ],
     [
-        r"(.*) (location|city) ?",
-        ['Indore, Madhya Pradesh',]
+        r"(.*) (location|city) ?|where are you from ?",
+        ["Why do you want to know? Are you some sort of government agent?",]
     ],
     [
         r"how is weather in (.*)?",
@@ -92,10 +101,6 @@ pairs = [
     [
         r"(.*) (sports|game) ?",
         ["I'm a very big fan of Football",]
-    ],
-    [
-        r"who (.*) sportsperson ?",
-        ["Messy","Ronaldo","Roony"]
     ],
     [
         r"who (.*) (moviestar|actor)?",
