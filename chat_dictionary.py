@@ -58,7 +58,7 @@ pairs = [
         ["Its alright","Its OK, never mind",]
     ],
     [
-        i_am+r" (doing)? (.*)",
+        i_am+r" (.*)? (.*)",
         ["SENTIMENT to hear that, How can I help you?",]
     ],
     [
