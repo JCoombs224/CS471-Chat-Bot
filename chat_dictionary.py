@@ -19,6 +19,8 @@
 #     (r"thanks", ["You're welcome, dear. Take care!"])
 # ]
 
+i_am = r"(im|i'm|i am)"
+
 pairs = [
     [
         r"(.*) name is (.*)",
@@ -60,7 +62,7 @@ pairs = [
         ["SENTIMENT to hear that, How can I help you?",]
     ],
     [
-        r"i'm (.*) doing good",
+        i_am.join(r" (.*) doing good"),
         ["Nice to hear that", "How can I help you?",]
     ],
     [

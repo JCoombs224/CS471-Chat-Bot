@@ -53,8 +53,8 @@ def generate(act, message):
         #response = response.partition('#')[0]
 
         if "SENTIMENT" in response:
-            
-            if response is "SENTIMENT to hear that, How can I help you?":
+
+            if response == "SENTIMENT to hear that, How can I help you?":
                 if message_sentiment == SentimentType.POSITIVE:
                     response = response.replace("SENTIMENT", "Happy")
                 elif message_sentiment == SentimentType.NEGATIVE:
