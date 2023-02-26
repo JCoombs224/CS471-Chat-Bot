@@ -51,6 +51,17 @@ def generate(act, message):
     if response:
         #state = response.partition('#')[2]
         #response = response.partition('#')[0]
+
+        if "SENTIMENT" in response:
+            
+            if response is "SENTIMENT to hear that, How can I help you?":
+                if message_sentiment == SentimentType.POSITIVE:
+                    response = response.replace("SENTIMENT", "Happy")
+                elif message_sentiment == SentimentType.NEGATIVE:
+                    response = response.replace("SENTIMENT", "I am sorry")
+                else:
+                    response = response.replace("SENTIMENT to hear that, ", "")
+
         return response
 
     # Determine next path based on message sentiment
@@ -64,6 +75,9 @@ def generate(act, message):
         print("The message is neutral")
         response = neutral_response(message)
 
+    if not response:
+        response = random.choice(CORPUS['confused'])
+
     # Send response to webhook
     return response
 
@@ -76,14 +90,14 @@ def negative_response(message):
     return response
 
 def neutral_response(message):
-    response = 'neutral'
+    response = ''
 
     #TODO: Respond to a neutral message here
 
     return response
 
 def positive_response(message):
-    response = 'positive'
+    response = ''
 
     #TODO: Respond to a positive message here
 

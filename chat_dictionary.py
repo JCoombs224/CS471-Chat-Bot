@@ -21,8 +21,11 @@
 
 pairs = [
     [
-        r"my name is (.*)",
-        ["Hello %1, How are you today ?",]
+        r"(.*) name is (.*)",
+        [
+            "Hello %2, how are you dear?",
+            "Hi %2, to what do I owe the pleasure?",
+        ]
     ],
     [
         r"hi|hey|hello",
@@ -35,19 +38,26 @@ pairs = [
     ], 
     [
         r"what is your name ?",
-        ["I am a bot created by Analytics Vidhya. you can call me crazy!",]
+        [
+            "Susie. What is you name?",
+            "My name is Susie.",
+            "I'm Susie. What is you name?"
+        ]
     ],
     [
         r"how are you ?",
-        ["I'm doing good. How about you?",]
+        [
+            "I'm doing good. How about you?",
+            "I'm doing well, thank you for asking. How about you?"
+        ]
     ],
     [
         r"sorry (.*)",
         ["Its alright","Its OK, never mind",]
     ],
     [
-        r"I am fine",
-        ["Great to hear that, How can I help you?",]
+        r"i'm (doing)? (.*)",
+        ["SENTIMENT to hear that, How can I help you?",]
     ],
     [
         r"i'm (.*) doing good",
@@ -92,10 +102,6 @@ pairs = [
     [
         r"who (.*) (moviestar|actor)?",
         ["Brad Pitt"]
-    ],
-    [
-        r"i am looking for online guides and courses to learn data science, can you suggest?",
-        ["Crazy_Tech has many great articles with each step explanation along with code, you can explore"]
     ],
     [
         r"bye|goodbye",
