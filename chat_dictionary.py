@@ -50,7 +50,7 @@ pairs = [
     ),
     (
         I_AM+r" ([0-9]+) ?",
-        ["I remember being %1, those were the days.",]
+        ["I remember being %2, those were the days.",]
     ),
     (
         I_AM+r" (.*)",
