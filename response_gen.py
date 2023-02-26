@@ -35,7 +35,7 @@ def get_response(act, message):
     
     return response
 
-def generate(message):
+def generate(act, message):
     response = ''
 
     # Get message sentiment score
@@ -49,6 +49,9 @@ def generate(message):
     response = chat.respond(message)
 
     if response:
+        state = response.partition('#')[1]
+        response = response.partition('#')[0]
+        print(state)
         return response
 
     # Determine next path based on message sentiment

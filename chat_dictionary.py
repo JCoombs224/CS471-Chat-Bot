@@ -55,7 +55,7 @@ pairs = [
     ],
     [
         r"how old are you?",
-        ["Oh my, I'm quite old! I've lost count of my years. How old are you dear?",]
+        ["Oh my, I'm quite old! I've lost count of my years. How old are you dear? #WAITING",]
     ],
     [
         r"i am (.*) years old",
