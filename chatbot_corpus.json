@@ -16,6 +16,17 @@
             "fajwo;eiajcmwoiawehello"
         ]
     },
+    "greeting": {
+        "hello": [
+            "How are you, son?",
+            "Are you married yet?",
+            "Hey there,  old chap!",
+            "WHO IS THIS?"
+        ],
+        "how doing": [
+            "I'm doing well, thank you for asking. How about you?"
+        ]
+    },
     "negative": {
         "you": [
             "People these days have no respect for their elders",
@@ -25,7 +36,23 @@
             "I understand that you may be having a bad day, but that doesn't give you the right to be rude to me.",
             "I'm sorry, I don't think I heard you correctly. Could you please repeat what you just said, but in a more polite manner?",
             "I'm not sure what I did to deserve such rudeness, but I hope you can find it in your heart to treat others with kindness and respect in the future.",
-            "I'm too old to waste my time on people who can't be civil. Goodbye."
+            "I'm too old to waste my time on people who can't be civil. Goodbye.",
+            "I didn't fight in the war to take shit from you",
+            "You're the reason America is going to shit",
+            "People these days have no respect for their elders",
+            "You need to watch your tone, mister",
+            "I'm going to call your mother so she can put soap in your mouth.",
+            "I can tell you were not properly disciplined as a child",
+            "You are a disappointment to our country",
+            "You're a good-for-nothing hippie, I'm sure of it",
+            "Eat my shorts",
+            "Kids these days...",
+            "Does anybody have respect these days?",
+            "I'm going to slide into your grandmother's dms if you don't straighten up",
+            "That's it. I'm taking you out of the will.",
+            "You're more annoying than my dead wife.",
+            "Texting you is more painful than my hemorrhoids",
+            "You suck. And your generation is a bunch of hippie freeloaders. And I hate you."
         ]
     }
 }
