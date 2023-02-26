@@ -26,7 +26,12 @@ pairs = [
     ],
     [
         r"hi|hey|hello",
-        ["Hello", "Hey there",]
+        [
+            "How are you, son?",
+            "Are you married yet?",
+            "Hey there, old chap!",
+            "WHO IS THIS?"
+        ]
     ], 
     [
         r"what is your name ?",
@@ -34,7 +39,7 @@ pairs = [
     ],
     [
         r"how are you ?",
-        ["I'm doing goodnHow about You ?",]
+        ["I'm doing good. How about you?",]
     ],
     [
         r"sorry (.*)",
@@ -46,11 +51,15 @@ pairs = [
     ],
     [
         r"i'm (.*) doing good",
-        ["Nice to hear that","How can I help you?:)",]
+        ["Nice to hear that", "How can I help you?:)",]
     ],
     [
-        r"(.*) age?",
-        ["I'm a computer program dudenSeriously you are asking me this?",]
+        r"how old are you?",
+        ["Oh my, I'm quite old! I've lost count of my years. How old are you dear?",]
+    ],
+    [
+        r"i am (.*) years old",
+        ["I remember being %1, those were the days",]
     ],
     [
         r"what (.*) want ?",
@@ -97,7 +106,7 @@ pairs = [
         ["Crazy_Tech has many great articles with each step explanation along with code, you can explore"]
     ],
     [
-        r"quit",
-        ["BBye take care. See you soon :) ","It was nice talking to you. See you soon :)"]
+        r"bye|goodbye",
+        ["Goodbye, dear. Take care!"]
     ],
 ]

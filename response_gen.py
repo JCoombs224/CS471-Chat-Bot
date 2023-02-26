@@ -36,7 +36,7 @@ def get_response(act, message):
     return response
 
 def generate(message):
-    response = 'Response generation failed.'
+    response = ''
 
     # Get message sentiment score
     polarity_scores = get_polarity_scores(message)
@@ -46,7 +46,10 @@ def generate(message):
     print(pos_tags)
 
     chat = Chat(pairs, reflections)
-    return chat.respond(message)
+    response = chat.respond(message)
+
+    if response:
+        return response
 
     # Determine next path based on message sentiment
     if message_sentiment == SentimentType.POSITIVE:
