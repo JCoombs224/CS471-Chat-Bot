@@ -30,14 +30,16 @@ pairs = [
         ]
     ),
     (
-        r"how are you?|(how's|hows) it going?",
+        r"how are you?|(hows|hows) it going?",
         [
             "I'm doing good. How about you?",
-            "I'm doing well, thank you for asking. How about you?"
+            "I'm doing well, thank you for asking. How about you?",
+            "Good. My friends keep dying",
+            "I'm still alive!! How about you?"
         ]
     ),
     (
-        r"(.*) how are you?|(.*) (how's|hows) it going?",
+        r"(.*) how are you?|(.*) (hows|hows) it going?",
         [
             "I'm doing good. How can I help you?",
             "I'm doing well, thank you for asking. What did you need?"
@@ -48,8 +50,8 @@ pairs = [
         ["Its alright","Its okay",]
     ),
     (
-        r"([0-9]+) ?",
-        ["I remember being %1, those were the days.",]
+        r"([a-zA-Z]*) ?([0-9]+) ?",
+        ["I remember being %2, those were the days.",]
     ),
     (
         I_AM+r" (.*)",
@@ -112,10 +114,10 @@ pairs = [
         ["Why do you like %1?", "Did you ever dislike %1?"]
     ),
     (
-        r"i (hate|dislike|don't like) (.*)",
+        r"i (hate|dislike|dont like) (.*)",
         ["Why don't you like %2?"]
     ),
-     (
+    (
         r"I need (.*)",
         (
             "Why do you need %1?",
@@ -124,7 +126,7 @@ pairs = [
         ),
     ),
     (
-        r"Why don\'t you (.*)",
+        r"Why dont you (.*)",
         (
             "Do you really think I don't %1?",
             "Perhaps eventually I will %1.",
@@ -132,7 +134,7 @@ pairs = [
         ),
     ),
     (
-        r"Why can\'t I (.*)",
+        r"Why cant I (.*)",
         (
             "Do you think you should be able to %1?",
             "If you could %1, what would you do?",
@@ -141,7 +143,7 @@ pairs = [
         ),
     ),
     (
-        r"I can\'t (.*)",
+        r"I cant (.*)",
         (
             "How do you know you can't %1?",
             "Perhaps you could %1 if you tried.",
@@ -157,7 +159,7 @@ pairs = [
         ),
     ),
     (
-        r"I\'m (.*)",
+        r"Im (.*)",
         (
             "How does being %1 make you feel?",
             "Do you enjoy being %1?",
@@ -220,7 +222,8 @@ pairs = [
             "How are you, dear?",
             "Are you married yet?",
             "Hey there, old chap!",
-            "WHO IS THIS?"
+            "WHO IS THIS?",
+            "Hi sweety, sorry I didn't check my phone until now. What a nice surprise. We\nwo\nf\nCrap I don't know how to get back up, do not laugh at me."
         ),
     ),
     (
