@@ -30,21 +30,21 @@ pairs = [
         ]
     ),
     (
-        r"how are you?",
+        r"how are you?|(how's|hows) it going?",
         [
             "I'm doing good. How about you?",
             "I'm doing well, thank you for asking. How about you?"
         ]
     ),
     (
-        r"(.*) how are you?",
+        r"(.*) how are you?|(.*) (how's|hows) it going?",
         [
             "I'm doing good. How can I help you?",
             "I'm doing well, thank you for asking. What did you need?"
         ]
     ),
     (
-        r"sorry ?",
+        r"(.*)(sorry|my bad) ?",
         ["Its alright","Its okay",]
     ),
     (
@@ -56,6 +56,10 @@ pairs = [
         ["SENTIMENT to hear that, How can I help you?",]
     ),
     (
+        r"(.*) (how|what) about you?",
+        ["%1 as well."]
+    ),
+    (
         r"(.*)how old (.*) you?",
         [
             "Oh my, I'm quite old! I've lost count of my years. How old are you dear?",
@@ -63,7 +67,7 @@ pairs = [
         ]
     ),
     (
-        r"(.*)remember (.*)",
+        r"(.*)remember (.*) ?",
         [
             "I do not remember much about %2. My memory isn't what it used to be, but I still cherish the memories I have."
         ]
@@ -162,12 +166,20 @@ pairs = [
         ),
     ),
     (
-        r"Are you (.*)",
+        r"Are you ?(.*)",
         (
             "Why does it matter whether I am %1?",
-            "Would you prefer it if I were not %1?",
-            "Perhaps you believe I am %1.",
-            "I may be %1 -- what do you think?",
+            "What's it to you?",
+            "Are you %1?",
+            "Why do you want to know? Are you %1?"
+        ),
+    ),
+    (
+        r"I asked first ?",
+        (
+            "Well now I am the one asking you.",
+            "I do not wish to answer your question."
+            "Great. Now answer me though."
         ),
     ),
     (
@@ -203,11 +215,12 @@ pairs = [
         ),
     ),
     (
-        r"Hello(.*)",
+        r"hello(.*)",
         (
-            "Hello... I'm glad you could drop by today.",
-            "Hi there... how are you today?",
-            "Hello, how are you feeling today?",
+            "How are you, dear?",
+            "Are you married yet?",
+            "Hey there, old chap!",
+            "WHO IS THIS?"
         ),
     ),
     (
@@ -222,12 +235,13 @@ pairs = [
             "Why don't you tell me about a childhood friend?",
         ),
     ),
-    (r"Yes", ("You seem quite sure.", "OK, but can you elaborate a bit?")),
+    (r"Yes", ("You seem quite sure.", "Did you have anything else you wanted to ask me?")),
+    (r"No", ("Well ok then...", "Well it is settled then.")),
     (
         r"(.*) computer(.*)",
         (
             "Are you really talking about me?",
-            "No?",
+            "No.",
             "%1 computer?",
             "I can barely figure out email. So no.",
         ),
@@ -274,7 +288,7 @@ pairs = [
         ),
     ),
     (
-        r"You\'re (.*)",
+        r"Youre (.*)",
         (
             "Why do you say I am %1?",
             "Why do you think I am %1?",
@@ -282,7 +296,7 @@ pairs = [
         ),
     ),
     (
-        r"I don\'t (.*)",
+        r"I dont (.*)",
         ("Don't you really %1?", "Why don't you %1?", "Do you want to %1?"),
     ),
     (
@@ -392,4 +406,11 @@ pairs = [
             "Why don't you tell me?",
         ),
     ),
+    (
+        r"it doesnt|it does",
+        (
+            "Are you sure about that?",
+            "What makes you so sure?"
+        ),
+    )
 ]

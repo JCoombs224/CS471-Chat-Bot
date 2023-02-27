@@ -8,6 +8,7 @@ import random
 import json
 import pickle
 import datetime
+import re
 from pprint import pformat
 
 from tools.nlp import *
@@ -31,12 +32,17 @@ def get_response(act, message):
     input_message = message
     response = 'NOT FOUND'
 
-    if message in CORPUS['input']:  
-        response = random.choice(CORPUS['input'][input_message])
-    else:
-        response = generate(act, message)
+    # remove punctuation
+    message = re.sub(r'[^\w\s]', '', message)
+
+    #if message in CORPUS['input']:  
+    #    response = random.choice(CORPUS['input'][input_message])
+    #else:
+        #response = generate(act, message)
         #with open('chatbot_corpus.json', 'w') as myfile:
         #    myfile.write(json.dumps(CORPUS, indent=4 ))
+
+    response = generate(act, message)
     
     return response
 
