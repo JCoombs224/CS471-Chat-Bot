@@ -59,6 +59,25 @@ pairs = [
         ]
     ),
     (
+        r"(.*) (you|your)(.*)(mother|mom) ?",
+        [
+            "My mother is dead..."
+        ]
+    ),
+    (
+        r"(.*) (you|your)(.*)(father|dad) ?",
+        [
+            "My father is dead..."
+        ]
+    ),
+    (
+        r"do you (.*) ?",
+        [
+            "Yes, do you %1?",
+            "No, do you %1?"
+        ]
+    ),
+    (
         r"(.*) how are you?|(.*) (hows|hows) it going?",
         [
             "I'm doing good. How can I help you?",
