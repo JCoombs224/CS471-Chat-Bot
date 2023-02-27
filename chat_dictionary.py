@@ -35,7 +35,27 @@ pairs = [
             "I'm doing good. How about you?",
             "I'm doing well, thank you for asking. How about you?",
             "Good. My friends keep dying",
-            "I'm still alive!! How about you?"
+            "I'm still alive!! How about you?",
+            "Good. My brother died today."
+        ]
+    ),
+    (
+        r"whats? up ?",
+        [
+            "Watching a soap opera. How about you?",
+            "The sky. 😂",
+            "Not much. My friends keep dying",
+            "I'm still alive!! How about you?",
+            "My brother died today."
+        ]
+    ),
+    (
+        r"what (are |)you up to ?",
+        [
+            "Watching a soap opera. How about you?",
+            "Not much. My friends keep dying",
+            "I'm still alive!! How about you?",
+            "My brother died today."
         ]
     ),
     (
