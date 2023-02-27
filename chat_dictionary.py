@@ -22,15 +22,6 @@ pairs = [
         ]
     ),
     (
-        r"hi|hey|hello",
-        [
-            "How are you, son?",
-            "Are you married yet?",
-            "Hey there, old chap!",
-            "WHO IS THIS?"
-        ]
-    ), 
-    (
         WHAT_IS+r" your name ?",
         [
             "Susie. What is you name?",
@@ -39,10 +30,17 @@ pairs = [
         ]
     ),
     (
-        r"how are you ?",
+        r"how are you?",
         [
             "I'm doing good. How about you?",
             "I'm doing well, thank you for asking. How about you?"
+        ]
+    ),
+    (
+        r"(.*) how are you?",
+        [
+            "I'm doing good. How can I help you?",
+            "I'm doing well, thank you for asking. What did you need?"
         ]
     ),
     (
@@ -58,14 +56,14 @@ pairs = [
         ["SENTIMENT to hear that, How can I help you?",]
     ),
     (
-        r"how old are you?|what's your age",
+        r"(.*)how old (.*) you?",
         [
             "Oh my, I'm quite old! I've lost count of my years. How old are you dear?",
             "Well, let's just say I've been around for quite some time. How old are you dear?",
         ]
     ),
     (
-        r"(.*) remember (.*)",
+        r"(.*)remember (.*)",
         [
             "I do not remember much about %2. My memory isn't what it used to be, but I still cherish the memories I have."
         ]
@@ -376,6 +374,15 @@ pairs = [
             "How do you think your childhood experiences relate to your feelings today?",
         ),
     ),
+    (
+        r"hi|hey|hello",
+        [
+            "How are you, son?",
+            "Are you married yet?",
+            "Hey there, old chap!",
+            "WHO IS THIS?"
+        ]
+    ), 
     (
         r"(.*)\?",
         (
