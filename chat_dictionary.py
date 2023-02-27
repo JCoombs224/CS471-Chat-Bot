@@ -229,9 +229,9 @@ pairs = [
         r"(.*) computer(.*)",
         (
             "Are you really talking about me?",
-            "Does it seem strange to talk to a computer?",
-            "How do computers make you feel?",
-            "Do you feel threatened by computers?",
+            "No?",
+            "%1 computer?",
+            "I can barely figure out email. So no.",
         ),
     ),
     (
