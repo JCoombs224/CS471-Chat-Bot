@@ -50,7 +50,7 @@ pairs = [
         ["Its alright","Its okay",]
     ),
     (
-        r"([0-9]+)?",
+        r"[0-9]+ ?",
         ["I remember being %2, those were the days.",]
     ),
     (
