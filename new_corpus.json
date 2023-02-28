@@ -53,14 +53,17 @@
 
         },
         "army2" : {
-                        "content" : ["TODO: "],
+                        "content" : ["This one time, at camp... "],
                         "next_state" : "confused"
 
         },
         "confused" : {
                         "content" : [
+                                "its a GREAT story, what do you mean!?",
+                                "Sorry, what were we talking about again...?",
                                 "I dont know what the hell you're talking about, son",
                                 "I dont understand anything you kids say anymore",
+                                "That some kinda new LINGO?",
                                 "You young folk have ruined english and you make no goddamn sense",
                                 "I'm tired of you youngins and your nonsense",
                                 "Stay in school kid, you're forgetting how to speak proper English"
@@ -84,6 +87,7 @@
                         "content" : [
                                 "I didn't fight in the war to take shit from you",
                                 "You're the reason America is going to shit",
+                                "Well maybe you should just pull yourself up by your bootstraps!",
                                 "People these days have no respect for their elders",
                                 "You need to watch your tone, mister",
                                 "I'm going to call your mother so she can put soap in your mouth.",
@@ -97,12 +101,14 @@
                                 "That's it. I'm taking you out of the will.",
                                 "You're more annoying than my dead wife.",
                                 "Texting you is more painful than my hemorrhoids",
+                                "Maybe if you'd stop spending so much money on avocado toast you'd be in a better financial state!",
                                 "You suck. And your generation is a bunch of hippie freeloaders. And I hate you."
                         ],
                         "next_state" : "question"
         },
         "positive" : {
                         "content" : [
+                                "Come visit me at the nursing home one of these days!",
                                 "Bless you kid, you deserve a hard candy",
                                 "You give me hope for the next generation",
                                 "If only every young American was just like you, then I wouldn't worry so much",
@@ -119,6 +125,7 @@
 
         "question" : {
                         "content" : [
+                                        "You one of the WOKE folk?",
                                         "I left a message on your answering machine. Why didn't you call me back yet?",
                                         "I'm still hip, right?",
                                         "Can you remind me to schedule my annual colonoscopy?",
