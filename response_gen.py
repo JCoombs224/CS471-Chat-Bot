@@ -13,8 +13,8 @@ from pprint import pformat
 
 from tools.nlp import *
 import nltk
-from nltk.chat.util import Chat, reflections
-from chat_dictionary import pairs
+from nltk.chat.util import Chat
+from chat_dictionary import pairs, reflections
 
 CORPUS = {}
 
@@ -34,13 +34,6 @@ def get_response(act, message):
 
     # remove punctuation
     message = re.sub(r'[^\w\s]', '', message)
-
-    #if message in CORPUS['input']:  
-    #    response = random.choice(CORPUS['input'][input_message])
-    #else:
-        #response = generate(act, message)
-        #with open('chatbot_corpus.json', 'w') as myfile:
-        #    myfile.write(json.dumps(CORPUS, indent=4 ))
 
     response = generate(act, message)
     
@@ -70,7 +63,6 @@ def generate(act, message):
         #response = response.partition('#')[0]
 
         if "SENTIMENT" in response:
-
             if response == "SENTIMENT to hear that, How can I help you?":
                 if message_sentiment == SentimentType.POSITIVE:
                     response = response.replace("SENTIMENT", "Happy")
@@ -78,28 +70,29 @@ def generate(act, message):
                     response = response.replace("SENTIMENT", "I am sorry")
                 else:
                     response = response.replace("SENTIMENT to hear that, ", "")
-
-        return response
-
-    # Determine next path based on message sentiment
-    if message_sentiment == SentimentType.POSITIVE:
-        print("The message is positive")
-        response = positive_response(message)
-    elif message_sentiment == SentimentType.NEGATIVE:
-        print("The message is negative")
-        response = negative_response(message)
     else:
-        print("The message is neutral")
-        response = neutral_response(message)
+        # Determine next path based on message sentiment
+        if message_sentiment == SentimentType.POSITIVE:
+            print("The message is positive")
+            response = positive_response(message)
+        elif message_sentiment == SentimentType.NEGATIVE:
+            print("The message is negative")
+            response = negative_response(message)
+        else:
+            print("The message is neutral")
+            response = neutral_response(message)
 
     if not response:
         response = random.choice(CORPUS['confused'])
+    
+    if "ACTORNUMBER" in response:
+        response = response.replace("ACTORNUMBER", act.phone)
 
     # Send response to webhook
     return response
 
 def negative_response(message):
-    response = 'negative'
+    response = ''
 
     if "you" in message:
         response = random.choice(CORPUS['negative']['you'])

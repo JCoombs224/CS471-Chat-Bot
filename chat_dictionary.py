@@ -11,6 +11,27 @@ YOU_WOULD = r"(you would|youd|you'd)"
 YOU_WILL = r"(you will|youll|you'll)"
 WHAT_IS = r"(what is|whats|what's)"
 
+reflections = {
+    "i am": "you are",
+    "i was": "you were",
+    "i": "you",
+    "i'm": "you are",
+    "i'd": "you would",
+    "i've": "you have",
+    "i'll": "you will",
+    "my": "your",
+    "you are": "I am",
+    "are you": "I am",
+    "you were": "I was",
+    "were you": "I was",
+    "you've": "I have",
+    "you'll": "I will",
+    "your": "my",
+    "yours": "mine",
+    "you": "me",
+    "me": "you",
+}
+
 
 
 pairs = [
@@ -46,7 +67,8 @@ pairs = [
             "The sky. 😂",
             "Not much. My friends keep dying",
             "I'm still alive!! How about you?",
-            "My brother died today."
+            "My brother died today.",
+            "Just taking it one day at a time."
         ]
     ),
     (
@@ -65,7 +87,7 @@ pairs = [
         ]
     ),
     (
-        r"(.*) (you|your)(.*)(father|dad) ?",
+        r"(.*)(you|your)(.*)(father|dad) ?",
         [
             "My father is dead..."
         ]
@@ -86,7 +108,16 @@ pairs = [
     ),
     (
         r"(.*)(sorry|my bad) ?",
-        ["Its alright","Its okay",]
+        [
+            "It's alright",
+            "Its okay",
+            "No need to apologize.",
+            "It's okay, everyone makes mistakes.",
+            "No worries, we all have off days.",
+            "No harm done.",
+            "🙏",
+            "All good."
+        ]
     ),
     (
         r"([a-zA-Z]*) ?([0-9]+) ?",
@@ -94,7 +125,10 @@ pairs = [
     ),
     (
         I_AM+r" (.*)",
-        ["SENTIMENT to hear that, How can I help you?",]
+        [
+            "SENTIMENT to hear that, How can I help you?",
+            "Why do you think you're %1?"
+        ]
     ),
     (
         r"(.*) (how|what) about you?",
@@ -117,6 +151,13 @@ pairs = [
         r"what (.*) want ?",
         [
             "Make me an offer I can't refuse",
+
+        ]
+    ),
+    (
+        r"i (.*)want (.*)",
+        [
+            "Why do you %1want %2?",
 
         ]
     ),
@@ -277,8 +318,31 @@ pairs = [
             "Why don't you tell me about a childhood friend?",
         ),
     ),
-    (r"Yes", ("You seem quite sure.", "Did you have anything else you wanted to ask me?")),
-    (r"No", ("Well ok then...", "Well it is settled then.")),
+    (
+    r"(Yes|i got y?o?u)",
+    (
+        "You seem quite sure.",
+        "Did you have anything else you wanted to ask me?",
+        "That's great.",
+        "OK.",
+        "👌",
+        "Well alright then."
+    )
+    ),
+    (
+        r"No", 
+        (
+            "Well ok then...",
+            "Well it is settled then.",
+            "Well, that's too bad. I was really hoping you could help me out.",
+            "I see. Maybe someone else can help me then.",
+            "No? Are you sure? Maybe you should think about it a little longer.",
+            "I understand. Thank you for your honesty.",
+            "Oh well, it was worth a shot asking.",
+            "Alright, I'll ask someone else then.",
+            "No problem, thanks for letting me know."
+        )
+    ),
     (
         r"(.*) computer(.*)",
         (
@@ -336,6 +400,18 @@ pairs = [
             "Why do you think I am %1?",
             "Are we talking about you, or me?",
         ),
+    ),
+
+    (
+        r"I don't know",
+        (
+            "That's okay, we can work on figuring it out together.",
+            "No worries, let's try to find the answer.",
+            "It's alright not to know everything.",
+            "We can always look it up.",
+            "🤔",
+            "Let's explore together."
+        )
     ),
     (
         r"I dont (.*)",
@@ -439,6 +515,28 @@ pairs = [
             "WHO IS THIS?"
         ]
     ), 
+    (
+        r"(.*) (ha)+",
+        [
+            "What's so funny?"
+        ]
+    ), 
+    (
+        r"you",
+        [
+            "Me?",
+            "No you"
+        ]
+    ),
+    (
+        r"thank you|thanks|appreciate it",
+        [
+            "You're welcome",
+            "My pleasure",
+            "Don't mention it",
+            "Anytime"
+        ]
+    ),
     (
         r"(.*)\?",
         (
